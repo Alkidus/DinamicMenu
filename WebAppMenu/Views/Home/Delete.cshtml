@@ -1,0 +1,37 @@
+﻿@model WebAppMenu.Models.Table_Access
+@{
+    ViewBag.Title = "Удаление элемента";
+
+}
+<h2>Удаление элемента</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Код меню</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>Назва, яка відображається на сторінці</dt>
+        <dd>
+            @Html.DisplayFor(model => model.MenuName)
+        </dd>
+
+        <dt>Id батьківського елемента меню</dt>
+        <dd>
+            @Html.DisplayFor(model => model.ParentId)
+        </dd>
+
+        <dt>Статус запису</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-danger" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>

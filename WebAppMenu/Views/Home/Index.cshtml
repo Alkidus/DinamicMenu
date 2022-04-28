@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<hr />
+@*<div class="text-center">
+    <ul>
+        @foreach(var menuItem in ViewBag.MenuLevel1)
+        {
+            <li>
+                @if(menuItem.ParentId == null)
+                {
+                    @menuItem.MenuName
+                    @if(menuItem.Table_Access1.Count > 0)
+                    {
+                    <ul>
+                        @foreach(var menuItem2 in menuItem.Table_Access1)
+                        {
+                            <li>@menuItem2.MenuName</li>
+                        }
+                    </ul>
+                    }
+                }
+
+            </li>
+        }
+        <p>new variant</p>
+        @foreach(var menuItem in ViewBag.MenuLevel1)
+        {
+            <li>
+                @if(menuItem.ParentId == null)
+                {
+                    @menuItem.MenuName
+                    if(menuItem.ParentId != null)
+                    {
+                        <ul>
+                        @foreach(var menuItem2 in ViewBag.MenuLevel1)
+                        {
+                                if(menuItem2.ParentId == menuItem.Id)
+                                {
+                                    <li>@menuItem2.MenuName</li>
+                                }
+                        }
+                        </ul>
+                    }
+                }
+            </li>
+        }
+    </ul>
+
+</div>*@

@@ -1,0 +1,43 @@
+﻿@using WebAppMenu.Models
+
+
+<a asp-action="Create">Добавить элемент меню</a><br />
+<br />
+<a asp-action="Index">На главную</a>
+<table class="table">
+    <tr>
+        <th>
+            <b>Ідентифікатор меню</b>
+        </th>
+        <th>
+            <b>Код меню</b>
+        </th>
+        <th>
+            <b>Назва, яка відображається на сторінці</b>
+        </th>
+        <th>
+            <b>Id батьківського елемента</b>
+        </th>
+        <th>
+            <b>Статус запису</b>
+        </th>
+        <th>
+            <b>Action</b>
+        </th>
+    </tr>
+    @foreach(var menuItem in ViewBag.MenuLevel1)
+    {
+        <tr>
+            <td>@menuItem.Id</td>
+            <td>@menuItem.Code</td>
+            <td>@menuItem.MenuName</td>
+            <td>@menuItem.ParentId</td>
+            <td>@menuItem.Status</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@menuItem.Id">Изменить</a> |
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@menuItem.Id">Удалить</a>
+            </td>
+        </tr>
+
+    }
+</table>
